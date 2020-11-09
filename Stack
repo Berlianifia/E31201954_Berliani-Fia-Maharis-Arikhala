@@ -1,0 +1,194 @@
+D:\Java\Queue\src\NilaiMatkul.java
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package tutorial;
+
+
+/**
+ *
+ * @author Berliani
+ */
+public class Stack {
+    int top;
+     NilaiMatkul[] data = new NilaiMatkul[10];
+      
+     Stack() {
+        for (int i = 0; i<10; i++) {
+            data[i] = new NilaiMatkul();
+        }
+     }
+     void setTop(int top){
+         this.top = top;
+     }
+     int getTop(){
+         return top;
+     }
+     void createEmpty(){
+         top = -1;
+     }
+     
+     boolean isEmpty(){
+         boolean hasil = false;
+         
+         if (top == -1) {
+             hasil = true;
+         }
+         
+         return hasil;
+     }
+     boolean isFull(){
+         boolean hasil = false;
+         
+         if (top == data.length -1) {
+             hasil = true;
+         }
+         
+         return hasil;
+     }
+     void push(String nim, String nama, double nilai){
+         if (isFull() == true){
+             // jika stack penuh
+             System.out.println("Stack sudah penuh");
+         }
+         else {
+             if (isEmpty()== true){
+                 // jika stack kosong
+                 top = 0;
+                 data[0].setnim (nim);
+                 data[0].setnama (nama);
+                 data[0].setnilai (nilai);
+                 
+             }
+             else {
+                 top = top +1;
+                 data[top].setnim(nim);
+                 data[top].setnama(nama);
+                 data[top].setnilai(nilai);
+             }
+         }
+     }
+     void pop(){
+        if (top == 0) {
+            // jika stack berisi satu elemen
+            top = -1;
+        } else {
+            if (top != -1){
+                // jika stack tidak kosong
+                top = top - 1;
+            }
+        }
+     }
+     
+     void printStack(){
+        if (top != -1) {
+            System.out.println("---------------isi stack-----------");
+            int i;
+            
+            for (i = top; i >= 0; i--) {
+                System.out.println("===============================");
+                System.out.println("elemen ke-" + i);
+                System.out.println("nim ; " + data[i].getnim());
+                System.out.println("nama ; " + data[i].getnama());
+                System.out.println("nilai ; " + data[i].getnilai());
+                System.out.println("===============================");
+            }
+            System.out.println("------------------------------");
+        }
+       
+        else{
+            // proses jika stacknya kosong
+            System.out.println("stack kosong");
+        }
+    }
+}
+"D:\Tugas Netbeans\BerlianiFia\src\tutorial\NilaiMatkul.java"
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package tutorial;
+
+/**
+ *
+ * @author Berliani
+ */
+public class NilaiMatkul {
+    private String nim;
+    private String nama;
+    private double nilai;
+    
+    NilaiMatkul(){
+        
+        
+    }
+    void setnim(String nim){
+        this.nim = nim;
+        
+    }
+    String getnim(){
+        return nim;
+        
+    }
+    
+    void setnama(String nama){
+        this.nama = nama;
+        
+    }
+    String getnama(){
+        return nama;
+        
+    }
+    
+    void setnilai(double nilai){
+        this.nilai = nilai;
+        
+    }
+        double getnilai(){
+        return nilai;
+    }
+}
+"D:\Tugas Netbeans\BerlianiFia\src\tutorial\CobaStackStatis.java"
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package tutorial;
+
+/**
+ *
+ * @author Berliani
+ */
+public class CobaStackStatis {
+    public static void main(String[] args) {
+        
+        Stack S = new Stack();
+        
+     
+        S.createEmpty();
+        S.printStack();
+        
+        System.out.println("==================================");
+        
+        S.push("E31201954", "berliani", 79.78);
+        S.push("G42201982", "erlin", 81.22);
+        S.push("B32201897", "citra", 75.59);
+        
+        S.printStack();
+        
+        System.out.println("==================================");
+        
+        S.pop();
+        S.pop();
+        
+        System.out.println("==================================");             
+    }   
+}
+
+   
+    
+            
