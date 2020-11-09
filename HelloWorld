@@ -1,0 +1,30 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ * 
+ * @author Berliani
+ */
+public class HelloWorld {
+    public static void main(String[] args){
+       System.out.print("HelloWorld");
+       System.out.println("Hai....!!!");
+       System.out.println("Perkenalkan");
+       System.out.print("Nama : ");
+       System.out.println("Berliani Fia")
+       System.out.print ("Asal : ");
+       System.out.println("Kediri");
+       System.out.print("NIM : ");
+       System.out.println("E31201954");
+       System.out.print("Jurusan : ");
+       System.out.println("Teknologi Informasi");
+       System.out.print("Program Studi : ");
+       System.out.println("Manajamen Informatika");
+       System.out.println("Terima Kasih")
+    }
+    
+}
+
